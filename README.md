@@ -30,9 +30,11 @@ After install, these paths should point into this repo:
 
 ## Neovim
 
-Start Neovim once after install:
+Start Neovim within tmux once after install:
+
 
 ```bash
+tmux
 nvim
 ```
 
