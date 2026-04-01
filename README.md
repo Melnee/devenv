@@ -47,6 +47,7 @@ This repo sets `Space` as the Neovim leader key and installs:
 - `christoomey/vim-tmux-navigator`
 - `nvim-telescope/telescope.nvim`
 - `nvim-telescope/telescope-file-browser.nvim`
+- `mrjones2014/smart-splits.nvim`
 
 ### File Search and Browsing
 
@@ -92,19 +93,7 @@ Neovim split commands that still work inside Neovim:
 
 Resize splits:
 
-- `Ctrl-w >` grows width
-- `Ctrl-w <` shrinks width
-- `Ctrl-w +` grows height
-- `Ctrl-w -` shrinks height
-- `Ctrl-w 10>` grows width by 10
-- `Ctrl-w 10<` shrinks width by 10
-- `Ctrl-w 5+` grows height by 5
-- `Ctrl-w 5-` shrinks height by 5
-- `:vertical resize 80` sets exact width
-- `:resize 20` sets exact height
-- `Ctrl-w =` equalizes all splits
-- `Ctrl-w |` maximizes the current split width
-- `Ctrl-w _` maximizes the current split height
+- `Alt+hjkl` grows or shrinks width in any direction, for both tmux and nvim
 
 ### Editing and Selection
 
