@@ -1,8 +1,0 @@
-services:
-  devenv:
-    build: .
-    volumes:
-      - ~/:/workspace
-    working_dir: /workspace
-    stdin_open: true
-    tty: true
