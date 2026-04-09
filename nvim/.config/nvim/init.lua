@@ -7,7 +7,7 @@ vim.opt.splitright = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 -- lazy.nvim bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
