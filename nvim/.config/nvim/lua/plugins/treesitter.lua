@@ -2,9 +2,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-		build = ":TSUpdate",
+    lazy = false,
+    build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.config").setup({
+      require("nvim-treesitter").setup({
         ensure_installed = {
           "ruby",
           "javascript",
@@ -20,13 +21,16 @@ return {
           "bash",
           "python",
         },
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
       })
+      vim.treesitter.language.register("javascript", "javascriptreact")
+      vim.treesitter.language.register("typescript", "typescriptreact")
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+      vim.opt.indentexpr = "nvim_treesitter#indent()"
     end,
   },
 }
