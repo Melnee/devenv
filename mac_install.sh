@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # install dependencies
-brew install neovim tmux git stow ripgrep fd curl unzip tree-sitter-cli
+brew install neovim tmux git stow ripgrep fd curl unzip tree-sitter-cli node
 
 grep -qxF 'export PATH="$(brew --prefix tree-sitter)/bin:$PATH"' "$HOME/.zshrc" \
   || echo 'export PATH="$(brew --prefix tree-sitter)/bin:$PATH"' >> "$HOME/.zshrc"

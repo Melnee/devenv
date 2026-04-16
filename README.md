@@ -2,6 +2,9 @@
 
 Portable tmux and Neovim dotfiles managed with GNU Stow.
 
+# Copilot integration
+:Copilot auth, and then follow instructions
+
 ## Install
 
 From the repo root:
@@ -276,3 +279,5 @@ Example conflict locations:
 - `~/.config/nvim/lua/plugins/...`
 
 Move or back up those files first, then run `./install.sh` again.
+
+
