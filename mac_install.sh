@@ -2,7 +2,11 @@
 set -euo pipefail
 
 # install dependencies
-brew install neovim tmux git stow ripgrep fd curl unzip
+brew install neovim tmux git stow ripgrep fd curl unzip tree-sitter-cli
+
+grep -qxF 'export PATH="$(brew --prefix tree-sitter)/bin:$PATH"' "$HOME/.zshrc" \
+  || echo 'export PATH="$(brew --prefix tree-sitter)/bin:$PATH"' >> "$HOME/.zshrc"
+
 
 # install TPM
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
