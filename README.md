@@ -5,6 +5,9 @@ Portable tmux and Neovim dotfiles managed with GNU Stow.
 # Copilot integration
 :Copilot auth, and then follow instructions
 
+ctrl-y to accept copilot suggestion
+ctrl-e to dismiss copilot suggestion
+
 ## Install
 
 From the repo root:
