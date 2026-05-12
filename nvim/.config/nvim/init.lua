@@ -12,6 +12,9 @@ vim.opt.expandtab = true
 -- line numbres
 vim.opt.number = true
 
+--colors thingy to help with themes showing up at all
+vim.opt.termguicolors = true
+
 -- lazy.nvim bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then

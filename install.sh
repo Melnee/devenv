@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # install dependencies
-sudo apt update && sudo apt insall -y neovim tmux git stow ripgrep fd-find curl unzip nodejs npm 
+sudo apt update && sudo apt install -y neovim tmux git stow ripgrep fd-find curl unzip nodejs npm 
 
 npm install -g tree-sitter-cli
 
