@@ -291,3 +291,6 @@ Git status bar (bottom right):
 ➕ = insertions
 ➖ = deletions
 🔧 = modified
+⏫ = your branch is head of remote
+⏬ = your branch is behind remote
+🚀 = staged changes to commit
