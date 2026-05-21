@@ -2,6 +2,10 @@
 
 Portable tmux and Neovim dotfiles managed with GNU Stow.
 
+Preview:
+<img width="2532" height="1445" alt="image" src="https://github.com/user-attachments/assets/538f06a2-a25f-4b65-9093-87bc8334c167" />
+
+
 # Copilot integration
 :Copilot auth, and then follow instructions
 
