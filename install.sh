@@ -3,15 +3,19 @@
 set -euo pipefail
 
 # install dependencies
-sudo apt update && sudo apt install -y  tmux git stow ripgrep fd-find curl unzip nodejs npm 
+sudo apt update && sudo apt install -y  tmux git stow ripgrep fd-find curl unzip nodejs npm python3-pip 
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-tar xzf nvim-linux-x86_64.tar.gz
-sudo mv nvim-linux-x86_64 /opt/nvim
-sudo ln -s /opt/nvim/bin/nvim /usr/local/bin/nvim
-rm nvim-linux-x86_64.tar.gz
+if [ ! -f /usr/local/bin/nvim ]; then 
+ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+ tar xzf nvim-linux-x86_64.tar.gz
+ sudo mv nvim-linux-x86_64 /opt/nvim
+ sudo ln -s /opt/nvim/bin/nvim /usr/local/bin/nvim
+ rm nvim-linux-x86_64.tar.gz
+fi
 
 npm install -g tree-sitter-cli
+
+pip3 install libtmux --break-system-packages
 
 # install TPM
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then

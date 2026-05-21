@@ -284,3 +284,11 @@ Example conflict locations:
 Move or back up those files first, then run `./install.sh` again.
 
 
+====
+
+Git status bar:
+?N — untracked files
+~N — modified files
++N — staged files
+↑N — commits ahead of remote
+↓N — commits behind remote
