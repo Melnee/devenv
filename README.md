@@ -284,3 +284,10 @@ Example conflict locations:
 Move or back up those files first, then run `./install.sh` again.
 
 
+====
+
+Git status bar (bottom right):
+👻 = untracked (aka new files)
+➕ = insertions
+➖ = deletions
+🔧 = modified
