@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 # install dependencies
-sudo dnf install -y neovim tmux git stow ripgrep fd-find curl unzip nodejs npm
+sudo dnf install -y tmux git stow ripgrep fd-find curl unzip nodejs npm
 npm install -g tree-sitter-cli
 # install TPM
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
