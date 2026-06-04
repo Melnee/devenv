@@ -2,7 +2,12 @@ return {
   "Mofiqul/vscode.nvim",
   priority = 1000,
   config = function()
-    require("vscode").setup({ transparent = true })
+    require("vscode").setup({ 
+      transparent = false, 
+      color_overrides = {
+        vscBack = "#1e1e2e"
+      }
+    })
     require("vscode").load()
     vim.api.nvim_create_autocmd("VimEnter", {
       callback = function()

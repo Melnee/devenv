@@ -14,7 +14,7 @@ return {
         automatic_installation = true,
       })
       vim.lsp.enable("pyright")
-      vim.lsp.enable("ruby_lsp")
+      vim.lsp.enable("ruby-lsp")
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("eslint")
     end,
