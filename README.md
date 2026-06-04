@@ -55,6 +55,17 @@ This repo sets `Space` as the Neovim leader key and installs:
 - `nvim-telescope/telescope-file-browser.nvim`
 - `mrjones2014/smart-splits.nvim`
 
+
+### Nvim Tree Keybindings
+- m — toggle mark on a file
+- x on a marked file — cut all marked
+- c — copy all marked
+- p — paste
+
+Ctrl+] to make the directory under your cursor the current root
+
+While in the nvim tree panel, type g? to see all keybindings
+
 ### File Search and Browsing
 
 Telescope mappings configured in this repo:
@@ -62,6 +73,9 @@ Telescope mappings configured in this repo:
 - `Space ff` for fuzzy file search
 - `Space fg` for live grep
 - `Space fb` for the Telescope file browser
+
+If you've accidentally exited out of the file browser, please re-open it with:
+- `<leader> (aka space) e`
 
 Inside the Telescope file picker:
 
@@ -220,8 +234,7 @@ Pane management:
 
 - `Ctrl-b "` splits horizontally
 - `Ctrl-b %` splits vertically
-- `tmux select-pane -T mypane` renames a pane
-- `tmux rename-window mynewname` renames a window
+- `Ctrl-b , mynewname` renames a window
 
 tmux copy mode:
 
@@ -284,13 +297,35 @@ Example conflict locations:
 Move or back up those files first, then run `./install.sh` again.
 
 
+## Checkmate (Markdown mod that makes checkboxes interactive!)
+
+- [ ] Unchecked todo
+- [x] Checked todo
+
+Shortcut to create that syntax:
+- :Checkmade create
+OR
+- <leader>Tn
+
+Then to toggle the checkboxes:
+- :Checkmate toggle
+OR
+
+- <leader>Tt
+
+Newlines after a checkbox will automatically create new ones.
+To avoid this, when creating a newline, do Shift+Enter
+
+And to make the current checkbox indented, in Normal mode, do >>
+
+
 ====
 
 Git status bar (bottom right):
-👻 = untracked (aka new files)
-➕ = insertions
-➖ = deletions
-🔧 = modified
-⏫ = your branch is head of remote
-⏬ = your branch is behind remote
-🚀 = staged changes to commit
+- 👻 = untracked (aka new files)
+- ➕ = insertions
+- ➖ = deletions
+- 🔧 = modified
+- ⏫ = your branch is head of remote
+- ⏬ = your branch is behind remote
+- 🚀 = staged changes to commit

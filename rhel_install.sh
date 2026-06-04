@@ -22,4 +22,6 @@ fi
 stow -t "$HOME" tmux
 stow -t "$HOME" nvim
 echo "done! open a new terminal and run tmux, then prefix + I to install plugins"
+echo "and if there are updates to the tmux plugins, then prefix + I to update"
+
 echo "remember to set JetBrainsMono Nerd Font in your terminal emulator settings!"
