@@ -233,6 +233,7 @@ Window management with the default tmux prefix (`Ctrl-b`):
 - `Ctrl-b w` lists windows
 - `Ctrl-b 0` through `Ctrl-b 9` jumps to a numbered window
 - `Ctrl-b ,` renames the current window
+- `Ctrl-b Shift<` permits swapping windows left and right to arrange
 
 Pane management:
 
@@ -332,4 +333,6 @@ Git status bar (bottom right):
 - 🔧 = modified
 - ⏫ = your branch is head of remote
 - ⏬ = your branch is behind remote
-- 🚀 = staged changes to commit
+-bind S-Left swap-window -t -1\; previous-window
+bind S-Right swap-window -t +1\; next-window
+ 🚀 = staged changes to commit
