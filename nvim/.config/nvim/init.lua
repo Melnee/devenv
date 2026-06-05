@@ -30,3 +30,6 @@ require("lazy").setup("plugins")
 
 vim.cmd.colorscheme("vscode")
 
+
+-- case insensitive unless you deliberately type in uppercase
+vim.opt.ignorecase = true
