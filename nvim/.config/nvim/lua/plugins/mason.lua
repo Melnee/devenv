@@ -15,7 +15,7 @@ return {
       })
       vim.lsp.enable("pyright")
       vim.lsp.enable("ruby-lsp")
-      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("vtsls")
       vim.lsp.enable("eslint")
     end,
   },

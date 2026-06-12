@@ -324,6 +324,21 @@ To avoid this, when creating a newline, do Shift+Enter
 And to make the current checkbox indented, in Normal mode, do >>
 
 
+## Diff View for Rebases/Git Changes!
+
+- `:DiffviewOpen`
+- `:DiffviewFileHistory`
+- `:DiffviewClose`
+
+## Nvim SVG View
+<leader>vi to open the svg in a browser. file needs to be open in a file view pane.
+
+## Tmux Session Management
+
+ctrl b N creates a new sessino 
+ctrl b s is the session navigation menu
+while inside a session, ctrl b $ then type new name (not from within ctrl b s menu though)
+
 ====
 
 Git status bar (bottom right):
