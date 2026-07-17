@@ -6,7 +6,29 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function()
-      require("telescope").setup()
+      require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = { "%.git/" },
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--ignore-case",
+            "--hidden",
+            "--no-ignore",
+            "--glob=!.git/*",
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            no_ignore = true,
+          },
+        },
+      })
       require("telescope").load_extension("file_browser")
     end,
     keys = {

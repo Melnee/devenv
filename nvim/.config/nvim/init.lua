@@ -30,3 +30,21 @@ require("lazy").setup("plugins")
 
 vim.cmd.colorscheme("vscode")
 
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#1e1e24' })  -- inactive, slightly shifted
+
+-- characters for trailing whitespace and non breaking space
+vim.opt.list = true
+vim.opt.listchars = { trail = "·", nbsp = "␣" }
+
+-- case insensitive unless you deliberately type in uppercase
+vim.opt.ignorecase = true
+
+vim.keymap.set("n", "<leader>vi", function()
+  local file = vim.fn.expand("%:p")
+  if file == "" or vim.bo.buftype ~= "" then
+    vim.notify("No file open", vim.log.levels.WARN)
+    return
+  end
+  vim.fn.jobstart({"firefox", file})
+end)
+
