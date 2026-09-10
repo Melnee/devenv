@@ -29,10 +29,11 @@ bind -n C-k if-shell -F "#{m:*vim*,#{pane_current_command}}" "send-keys C-k" "se
 bind -n C-l if-shell -F "#{m:*vim*,#{pane_current_command}}" "send-keys C-l" "select-pane -R"
 
 # smart-splits: Alt+hjkl to resize panes
-bind -n M-h run-shell "C:/PROGRA~1/Git/bin/bash.exe -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-left'"
-bind -n M-j run-shell "C:/PROGRA~1/Git/bin/bash.exe -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-down'"
-bind -n M-k run-shell "C:/PROGRA~1/Git/bin/bash.exe -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-up'"
-bind -n M-l run-shell "C:/PROGRA~1/Git/bin/bash.exe -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-right'"
+# Single quotes around the bash -c arg prevent PowerShell from expanding ~ ; bash then expands it correctly as the Unix home path
+bind -n M-h run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-left'"
+bind -n M-j run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-down'"
+bind -n M-k run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-up'"
+bind -n M-l run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-right'"
 
 # Pane background color aliases
 set -s command-alias[100] red='set -p window-style "bg=#2e1616" ; set -p window-active-style "bg=#3a1a1a"'
