@@ -23,16 +23,16 @@ bind S-Right swap-window -t +1\; next-window
 bind N new-session -c "~/Documents/coding/projects"
 
 # vim-tmux-navigator: Ctrl+hjkl to move between nvim splits and tmux panes
-bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
-bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
-bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
-bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
+bind -n C-h if-shell "bash -c 'echo \"#{pane_current_command}\" | grep -qi vim'" "send-keys C-h" "select-pane -L"
+bind -n C-j if-shell "bash -c 'echo \"#{pane_current_command}\" | grep -qi vim'" "send-keys C-j" "select-pane -D"
+bind -n C-k if-shell "bash -c 'echo \"#{pane_current_command}\" | grep -qi vim'" "send-keys C-k" "select-pane -U"
+bind -n C-l if-shell "bash -c 'echo \"#{pane_current_command}\" | grep -qi vim'" "send-keys C-l" "select-pane -R"
 
 # smart-splits: Alt+hjkl to resize panes
-bind -n M-h run-shell "$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-left"
-bind -n M-j run-shell "$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-down"
-bind -n M-k run-shell "$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-up"
-bind -n M-l run-shell "$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-right"
+bind -n M-h run-shell "bash -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-left'"
+bind -n M-j run-shell "bash -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-down'"
+bind -n M-k run-shell "bash -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-up'"
+bind -n M-l run-shell "bash -c '$LOCALAPPDATA/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-right'"
 
 # Pane background color aliases
 set -s command-alias[100] red='set -p window-style "bg=#2e1616" ; set -p window-active-style "bg=#3a1a1a"'
