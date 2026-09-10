@@ -17,9 +17,9 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
     exit 1
 }
 
-# Reset winget sources to fix "Data required by the source is missing" (0x8a15000f)
-Write-Host "Resetting winget sources..."
-winget source reset --force
+# Refresh winget sources to fix "Data required by the source is missing" (0x8a15000f)
+Write-Host "Updating winget sources..."
+winget source update
 $global:LASTEXITCODE = 0
 
 # Install dependencies
