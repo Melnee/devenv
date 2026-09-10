@@ -28,12 +28,11 @@ bind -n C-j if-shell -F "#{m:*vim*,#{pane_current_command}}" "send-keys C-j" "se
 bind -n C-k if-shell -F "#{m:*vim*,#{pane_current_command}}" "send-keys C-k" "select-pane -U"
 bind -n C-l if-shell -F "#{m:*vim*,#{pane_current_command}}" "send-keys C-l" "select-pane -R"
 
-# smart-splits: Alt+hjkl to resize panes
-# Single quotes around the bash -c arg prevent PowerShell from expanding ~ ; bash then expands it correctly as the Unix home path
-bind -n M-h run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-left'"
-bind -n M-j run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-down'"
-bind -n M-k run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-up'"
-bind -n M-l run-shell "C:/PROGRA~1/Git/bin/bash.exe -c 'exec ~/AppData/Local/nvim-data/lazy/smart-splits.nvim/smart-splits.sh resize-right'"
+# Alt+hjkl to resize panes (smart-splits nvim plugin handles the nvim side)
+bind -n M-h resize-pane -L 3
+bind -n M-j resize-pane -D 3
+bind -n M-k resize-pane -U 3
+bind -n M-l resize-pane -R 3
 
 # Pane background color aliases
 set -s command-alias[100] red='set -p window-style "bg=#2e1616" ; set -p window-active-style "bg=#3a1a1a"'
