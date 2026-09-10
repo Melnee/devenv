@@ -3,7 +3,6 @@
 
 set -sg escape-time 0
 set -g default-shell "C:/Program Files/Git/bin/bash.exe"
-set -g default-command "C:/Program Files/Git/bin/bash.exe --login"
 set -s extended-keys always
 
 # Vi keys in copy mode
