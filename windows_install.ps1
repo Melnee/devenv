@@ -37,10 +37,10 @@ $env:PATH = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine') + ';
 Write-Host "Installing PSMux..."
 try {
     $release = Invoke-RestMethod 'https://api.github.com/repos/psmux/psmux/releases/latest'
-    $asset = $release.assets | Where-Object { $_.name -match 'windows' -and $_.name -match 'x86_64' -and $_.name -match '\.zip$' } | Select-Object -First 1
+    $arch = if ([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture -eq [System.Runtime.InteropServices.Architecture]::Arm64) { 'arm64' } else { 'x86_64' }
+    $asset = $release.assets | Where-Object { $_.name -match 'windows' -and $_.name -match $arch -and $_.name -match '\.zip$' } | Select-Object -First 1
     if (-not $asset) {
-        # fallback: grab the first zip
-        $asset = $release.assets | Where-Object { $_.name -match '\.zip$' } | Select-Object -First 1
+        $asset = $release.assets | Where-Object { $_.name -match 'windows' -and $_.name -match '\.zip$' } | Select-Object -First 1
     }
     if ($asset) {
         $tmpZip = "$env:TEMP\psmux.zip"
