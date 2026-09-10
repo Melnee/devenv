@@ -2,6 +2,8 @@
 # Stripped of Linux-only features: TPM, plugins, xclip, Kitty terminal features
 
 set -sg escape-time 0
+set -g default-shell "powershell.exe"
+set -g default-command "powershell.exe -NoProfile"
 set -s extended-keys always
 
 # Vi keys in copy mode
