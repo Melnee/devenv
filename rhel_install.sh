@@ -21,6 +21,12 @@ fi
 # symlink fd
 stow -t "$HOME" tmux
 stow -t "$HOME" nvim
+
+read -rp "Install GitHub Copilot? [y/N] " install_copilot
+if [[ "$install_copilot" =~ ^[Yy]$ ]]; then
+  touch "$HOME/.copilot_enabled"
+fi
+
 echo "done! open a new terminal and run tmux, then prefix + I to install plugins"
 echo "and if there are updates to the tmux plugins, then prefix + I to update"
 
