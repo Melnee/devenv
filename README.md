@@ -179,7 +179,7 @@ occurrences and edit them all at once.
 - `gg` moves to the top of the file
 - `G` moves to the bottom of the file
 - `42G` or `:42` jumps to line 42
-- `Ctrl-d` half-page down
+- `Ctrl-d` half-page down — note: remapped to multi-cursor (see Multi-Cursor section); use `Ctrl-f` for paging
 - `Ctrl-u` half-page up
 - `Ctrl-f` full-page down
 - `Ctrl-b` full-page up
