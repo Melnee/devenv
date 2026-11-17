@@ -28,6 +28,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+-- error-message (diagnostic) display config
+require("config.error_message_configs")
+
 vim.cmd.colorscheme("vscode")
 
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#1e1e24' })  -- inactive, slightly shifted
@@ -38,6 +41,17 @@ vim.opt.listchars = { trail = "·", nbsp = "␣" }
 
 -- case insensitive unless you deliberately type in uppercase
 vim.opt.ignorecase = true
+
+-- auto reload files changed on disk
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  pattern = "*",
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+})
 
 vim.keymap.set("n", "<leader>vi", function()
   local file = vim.fn.expand("%:p")

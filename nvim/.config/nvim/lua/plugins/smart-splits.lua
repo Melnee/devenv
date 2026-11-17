@@ -1,5 +1,11 @@
 return {
   "mrjones2014/smart-splits.nvim",
+  -- Pinned to v2.1.1-final: the last release that bundles the built-in tmux
+  -- integration (sets the @pane-is-vim tmux var so C-h/j/k/l cross between
+  -- nvim splits and tmux panes). v3 moved tmux support to a separate backend
+  -- plugin; without it, pane navigation into nvim silently breaks.
+  commit = "ac11b8ed1efe7cca7bb3eae9c588163c926c6894",
+  pin = true,
   config = function()
     require("smart-splits").setup({
       default_amount = 3,

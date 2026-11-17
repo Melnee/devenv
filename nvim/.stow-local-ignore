@@ -1,0 +1,4 @@
+# Stray root-owned dirs that leaked into .config/ — not part of the dotfiles.
+# stow can't read them (0700 root) and would error; skip them.
+\.config/dconf
+\.config/gtk-3\.0

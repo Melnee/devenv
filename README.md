@@ -2,6 +2,15 @@
 
 Portable tmux and Neovim dotfiles managed with GNU Stow.
 
+## tmux Session Save / Restore (tmux-resurrect + tmux-continuum)
+
+After installing plugins (`Ctrl-b` then `Shift+i`):
+
+- `Ctrl-b Ctrl-s` — save session (windows, panes, directories)
+- `Ctrl-b Ctrl-r` — restore session
+- Auto-save runs every 15 minutes in the background
+- The last saved session restores automatically when tmux starts (e.g. after reboot)
+
 Preview:
 <img width="2532" height="1445" alt="image" src="https://github.com/user-attachments/assets/538f06a2-a25f-4b65-9093-87bc8334c167" />
 
@@ -58,6 +67,7 @@ This repo sets `Space` as the Neovim leader key and installs:
 - `nvim-telescope/telescope.nvim`
 - `nvim-telescope/telescope-file-browser.nvim`
 - `mrjones2014/smart-splits.nvim`
+- `mg979/vim-visual-multi`
 
 
 ### Nvim Tree Keybindings
@@ -140,6 +150,23 @@ Quote editing:
 - `vi"` visually selects inside double quotes
 
 The same pattern works for single quotes and backticks.
+
+### Multi-Cursor (VSCode Ctrl+D style)
+
+Powered by `mg979/vim-visual-multi`. Select a word, then keep grabbing the next
+occurrences and edit them all at once.
+
+- `Ctrl-d` — in normal mode, select the word under the cursor
+- `Ctrl-d` again — add the next occurrence as another live cursor (hold `Ctrl`, tap `d` to keep adding)
+- In visual mode, `Ctrl-d` selects the current selection, then extends the same way
+- Once you have your cursors, any edit applies to all of them at once (`c`, `d`, `i`, `a`, typing, etc.)
+- `n` / `N` — skip to the next / previous match without selecting it
+- `q` — remove the current cursor
+- `[` / `]` — jump between existing cursors
+- `\\A` — select every occurrence at once (default VM leader is `\`)
+- `Esc` — drop back to a single cursor
+
+`Ctrl-d` is mapped to match VSCode, which overrides the default `Ctrl-d` half-page scroll in normal mode.
 
 ### Navigation Inside a File
 
