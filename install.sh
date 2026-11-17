@@ -13,7 +13,7 @@ if [ ! -f /usr/local/bin/nvim ]; then
  rm nvim-linux-x86_64.tar.gz
 fi
 
-npm install -g tree-sitter-cli
+sudo npm install -g tree-sitter-cli
 
 # install TPM
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
